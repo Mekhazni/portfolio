@@ -1,0 +1,31 @@
+
+{
+  "experiences": [
+    {
+      "id": "algerie-telecom-pfe",
+      "organization": "Algérie Télécom",
+      "role": "Graduation Project Intern",
+      "type": "Internship",
+      "startDate": "February 2026",
+      "endDate": "June 2026",
+      "location": "Algiers, Algeria",
+      "description": "Worked on the design, implementation, and evaluation of a RAG-based question-answering system for technical PDF documents.",
+      "responsibilities": [
+        "Developed a retrieval pipeline combining query routing, hybrid retrieval, and contextual reranking.",
+        "Implemented backend and retrieval components using Python, FastAPI, and PostgreSQL with pgvector.",
+        "Built a web application prototype with authentication, document management, chat history, and citation-based document navigation."
+      ]
+    },
+    {
+      "id": "mobilis-internship",
+      "organization": "Mobilis",
+      "role": "Intern",
+      "type": "Internship",
+      "startDate": "jfje",
+      "endDate": "fef",
+      "location": "Algeria",
+      "description": "",
+      "responsibilities": []
+    }
+  ]
+}

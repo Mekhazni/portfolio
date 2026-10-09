@@ -1,0 +1,27 @@
+
+{
+  "education": [
+    {
+      "id": "ensticp-engineering-degree",
+      "institution": "ENSTICP",
+      "degree": "Engineering Degree",
+      "field": "Telecommunications and Information Technology",
+      "startYear": 2021,
+      "endYear": 2026,
+      "status": "Graduated",
+      "result": "Excellent",
+      "location": "Algeria"
+    },
+    {
+      "id": "baccalaureate-mathematics",
+      "institution": "",
+      "degree": "Baccalaureate",
+      "field": "Mathematics",
+      "startYear": 2021,
+      "endYear": 2021,
+      "status": "Completed",
+      "result": "",
+      "location": "Algeria"
+    }
+  ]
+}

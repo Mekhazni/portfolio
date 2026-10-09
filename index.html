@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080914">
+  <meta name="description" content="Nihad Mekhazni — Engineering graduate interested in AI, machine learning, and intelligent systems.">
+  <title>Nihad Mekhazni | AI &amp; Technology</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+<div class="site">
+
+  <!-- HEADER -->
+  <header>
+    <a class="brand" href="#home" aria-label="Nihad Mekhazni home">
+      <span data-profile="shortName">NM</span> <b>✦</b>
+      <small data-profile="name">Nihad Mekhazni</small>
+    </a>
+
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="header-socials" aria-label="Social links">
+        <a data-link="linkedin"
+           href="https://www.linkedin.com/in/nihad-mekhazni-1aa594324"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="LinkedIn" title="LinkedIn">in</a>
+
+       <a data-link="github"
+          href="https://github.com/Mekhazni"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="GitHub" title="GitHub">◉</a>
+
+       <a data-link="email"
+          href="mailto:mekhazni.nihad@gmail.com"
+          aria-label="Email" title="Email">✉</a>
+      </div>
+      
+      <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to light mode"
+          aria-pressed="false"
+          title="Switch theme"
+        >
+        <span class="theme-icon moon" aria-hidden="true">☾</span>
+        <span class="theme-icon sun" aria-hidden="true">☼</span>
+        <span class="theme-thumb" aria-hidden="true"></span>
+        </button>
+
+      <a class="cv-mini" data-link="cv" href="assets/files/MEKHAZNI_Nihad_resume.pdf" download>Download CV</a>
+
+      <button class="menu-toggle" type="button"
+        aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="mobile-nav">☰</button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav"
+      aria-label="Mobile navigation" hidden>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="section hero" id="home">
+      <div class="glow left"></div>
+      <div class="glow right"></div>
+
+      <svg class="edge-art" viewBox="0 0 1440 540"
+        preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="violetStroke" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7638e8" stop-opacity=".05"/>
+            <stop offset=".34" stop-color="#9d5bff" stop-opacity=".8"/>
+            <stop offset=".58" stop-color="#b976ff" stop-opacity=".65"/>
+            <stop offset=".82" stop-color="#e65cff" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#8a42ff" stop-opacity=".02"/>
+          </linearGradient>
+
+          <linearGradient id="pinkStroke" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#9b47ff" stop-opacity=".02"/>
+            <stop offset=".42" stop-color="#d45aff" stop-opacity=".7"/>
+            <stop offset=".65" stop-color="#ff5bdc" stop-opacity=".96"/>
+            <stop offset="1" stop-color="#ad48ff" stop-opacity=".04"/>
+          </linearGradient>
+
+          <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="1.8" result="b"/>
+            <feMerge>
+              <feMergeNode in="b"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <filter id="pinkGlow" x="-70%" y="-70%" width="240%" height="240%">
+            <feGaussianBlur stdDeviation="2.7" result="b"/>
+            <feMerge>
+              <feMergeNode in="b"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <filter id="nodeGlow" x="-400%" y="-400%" width="800%" height="800%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge>
+              <feMergeNode in="b"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <path class="line fine" d="M-80 18 C26 38 107 66 143 116 C173 158 145 193 94 216 C39 239 -28 254 -77 288"/>
+        <path class="line purple" d="M-74 5 C32 34 102 66 137 112 C165 149 155 182 117 205 C69 232 12 244 -55 269"/>
+        <path class="line pink" d="M-56 185 C18 169 98 149 126 110 C151 76 119 51 83 32"/>
+        <path class="line fine" d="M-72 219 C16 199 90 174 125 139"/>
+
+        <ellipse cx="-9" cy="405" rx="145" ry="122"
+          fill="url(#violetStroke)" opacity=".08"/>
+
+        <path class="line purple" d="M-92 318 C-16 339 31 369 62 402 C101 444 144 470 211 495"/>
+        <path class="line pink" d="M-78 354 C-14 372 29 398 59 425 C92 455 137 482 194 504"/>
+        <path class="line fine" d="M-80 388 C-21 395 24 416 58 443 C100 477 143 500 211 518"/>
+        <path class="line purple" d="M-15 333 C12 366 28 398 32 433 C37 469 61 498 106 524 C145 546 187 562 230 567"/>
+        <path class="line pink" d="M-18 357 C10 385 24 417 29 450 C35 483 66 514 111 538"/>
+        <path class="line fine" d="M-54 430 C-4 441 30 464 53 493 C79 526 123 549 177 565"/>
+        <path class="line purple" d="M-35 449 C14 477 44 517 48 564 C53 618 21 658 -25 684"/>
+        <path class="line pink" d="M-17 471 C22 502 40 537 40 575 C40 620 13 652 -20 672"/>
+        <path class="line fine" d="M-57 485 C-12 518 12 554 9 593 C7 632 -19 658 -49 676"/>
+
+        <circle class="node" cx="137" cy="112" r="1.8"/>
+        <circle class="node" cx="58" cy="425" r="2"/>
+
+        <path class="line fine" d="M1468 115 C1420 129 1393 151 1365 172 C1344 189 1321 193 1299 187"/>
+        <path class="line purple" d="M1477 131 C1433 145 1403 168 1378 189 C1356 207 1334 209 1315 203"/>
+        <path class="line pink" d="M1490 410 C1444 395 1413 373 1385 365 C1363 359 1345 366 1327 379"/>
+        <path class="line fine" d="M1490 428 C1449 413 1420 395 1391 386 C1368 379 1350 387 1335 398"/>
+
+        <circle class="node" cx="1365" cy="172" r="1.4"/>
+        <circle class="node" cx="1385" cy="365" r="1.5"/>
+      </svg>
+
+      <div class="section-content">
+        <div class="hero-copy">
+          <div class="eyebrow">Telecommunications · Information Technology · AI</div>
+
+          <h1>Hi, I'm<br>
+            <span class="gradient-text" data-profile="name">Nihad Mekhazni</span>
+          </h1>
+
+          <div class="role">
+            <span data-profile="headline">Telecommunications &amp; Information Technology Engineering Graduate</span>
+            <strong data-profile="targetRole">Aspiring AI/ML Engineer</strong>
+          </div>
+
+          <p data-profile="intro">
+            I'm passionate about building intelligent systems, exploring
+            information retrieval, and turning complex problems into practical solutions.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore My Work　→</a>
+            <a class="btn" data-link="cv" href="assets/files/MEKHAZNI_Nihad_resume.pdf" download>Download CV　↓</a>
+          </div>
+
+          <div class="socials">
+            <a data-link="linkedin" href="https://www.linkedin.com/in/nihad-mekhazni-1aa594324" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+            <a data-link="github" href="https://github.com/Mekhazni" target="_blank" rel="noreferrer" aria-label="GitHub">◉</a>
+            <a data-link="email" href="mailto:mekhazni.nihad@gmail.com" aria-label="Email">✉</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Abstract AI orbital graphic">
+          <div class="visual-orb"></div>
+          <div class="core"></div>
+          <div class="orbit-label one">✦ &nbsp; Intelligent systems</div>
+          <div class="orbit-label two">◎ &nbsp; Information retrieval</div>
+          <div class="orbit-label three">⌘ &nbsp; AI · ML · Data</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="glow right-pink"></div>
+
+      <svg class="edge-art" viewBox="0 0 1440 300"
+        preserveAspectRatio="none" aria-hidden="true">
+        <path class="line fine" d="M1470 12 C1402 39 1372 71 1383 103 C1391 126 1427 142 1475 155"/>
+        <path class="line purple" d="M1490 38 C1434 62 1407 89 1417 118 C1425 142 1452 156 1492 171"/>
+        <path class="line pink" d="M1488 198 C1445 184 1418 165 1394 164 C1374 163 1356 176 1342 192"/>
+        <path class="line fine" d="M1488 216 C1448 203 1422 187 1397 185 C1377 185 1362 196 1348 209"/>
+      </svg>
+
+      <div class="section-content about-grid">
+        <div class="about-copy">
+          <div class="section-heading">
+            <div>
+              <span class="section-number">01.</span>
+              <h2 style="display:inline">About Me</h2>
+            </div>
+          </div>
+
+          <h3>Turning curiosity<br>into <span>intelligent solutions.</span></h3>
+
+          <div id="about-content">
+            <p>I'm a Telecommunications and Information Technology Engineering graduate interested in AI, machine learning, and intelligent systems.</p>
+            <p>My graduation project focused on building a RAG-based question-answering system for technical PDF documents.</p>
+          </div>
+
+          
+          <button class="btn" type="button" id="open-about-modal">
+             More About Me →
+          </button>
+
+        </div>
+
+        <div class="about-facts">
+          <div class="fact">
+            <div class="fact-icon">✣</div>
+            <div><b>AI &amp; Machine Learning</b><small>Building and exploring intelligent systems</small></div>
+          </div>
+          <div class="fact">
+            <div class="fact-icon">⌁</div>
+            <div><b>Information Retrieval</b><small>Working with data, search, and RAG</small></div>
+          </div>
+          <div class="fact">
+            <div class="fact-icon">⌘</div>
+            <div><b>Problem Solving</b><small>Turning complex problems into practical solutions</small></div>
+          </div>
+          <div class="fact">
+            <div class="fact-icon">◈</div>
+            <div><b>Continuous Learning</b><small>Always curious, always learning</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="glow left-pink"></div>
+
+      <svg class="edge-art" viewBox="0 0 1440 620"
+        preserveAspectRatio="none" aria-hidden="true">
+        <path class="line purple" d="M-60 75 C-6 91 25 121 47 157 C69 194 96 211 137 222"/>
+        <path class="line fine" d="M-55 100 C-4 118 24 144 45 176"/>
+        <path class="line pink" d="M-50 442 C7 420 44 437 67 469 C90 500 76 534 45 550"/>
+        <path class="line fine" d="M-44 469 C7 450 37 464 50 491"/>
+        <path class="line fine" d="M1490 280 C1446 263 1417 243 1392 244 C1370 245 1353 259 1340 274"/>
+      </svg>
+
+      <div class="section-content">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">02.</span>
+            <h2 style="display:inline">Projects</h2>
+            <div class="section-sub">Things I've built.</div>
+          </div>
+          <a class="card-link" href="#project-grid">Explore projects →</a>
+        </div>
+
+        <!-- Populated from projects.json -->
+        <div id="featured-project">
+          <article class="featured">
+            <div>
+              <div class="feature-label">✦ &nbsp; Featured project</div>
+              <h3>RAG-Driven Knowledge Retrieval System</h3>
+              <p>A web-based question-answering system for technical documents using hybrid retrieval, query rewriting, reranking and LLMs.</p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">pgvector</span>
+                <span class="tag">RAG</span>
+                <span class="tag">Gemma 3</span>
+                <span class="tag">Ollama</span>
+              </div>
+              <div class="actions">
+                <a class="btn primary" href="project.html?id=rag-knowledge-retrieval">View Case Study　→</a>
+              </div>
+            </div>
+
+            <div class="mock-window" aria-label="Illustrative preview of a knowledge assistant">
+              <div class="mock-side"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="mock-app">
+                <div class="mock-top"><span>Knowledge Assistant</span><span>●　●　●</span></div>
+                <div class="mock-question">Ask your question</div>
+                <div class="mock-search">What can I help you find today?　⌕</div>
+                <div class="mock-answer">
+                  <div><i></i><i style="width:93%"></i><i style="width:70%"></i><i style="width:83%"></i><i style="width:54%"></i></div>
+                  <div><i></i><i style="width:78%"></i><i style="width:65%"></i><i style="width:88%"></i></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Populated from projects.json -->
+        <div class="project-grid" id="project-grid">
+          <article class="project-card">
+            <div class="project-thumb">
+              <div class="thumb-ui"><i></i><i style="width:52%"></i><i style="width:68%"></i></div>
+            </div>
+            <div class="project-body">
+              <h3>Business Intelligence System</h3>
+              <p>A business intelligence pipeline integrating data warehouse modeling, ETL workflows, dashboards, and predictive analytics.</p>
+              <div class="tags">
+                <span class="tag">MySQL</span><span class="tag">Talend</span><span class="tag">Power BI</span><span class="tag">KNIME</span>
+              </div>
+              <a class="card-link" href="project.html?id=business-intelligence-system">View project ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <div class="thumb-ui"><i></i><i style="width:71%"></i><i style="width:47%"></i></div>
+            </div>
+            <div class="project-body">
+              <h3>Machine Learning CTR Prediction</h3>
+              <p>A machine learning project applying feature engineering and predictive models to estimate advertisement click-through rates.</p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Feature Engineering</span><span class="tag">Machine Learning</span>
+              </div>
+              <a class="card-link" href="project.html?id=machine-learning-ctr-prediction">View project ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE AND EDUCATION -->
+    <section class="section timeline-area" id="experience">
+      <div class="glow right"></div>
+
+      <svg class="edge-art" viewBox="0 0 1440 370"
+        preserveAspectRatio="none" aria-hidden="true">
+        <path class="line fine" d="M-70 48 C-4 67 31 98 48 135 C62 166 48 189 22 205"/>
+        <path class="line purple" d="M-65 74 C-10 91 18 117 32 145"/>
+        <path class="line fine" d="M1490 240 C1442 222 1413 197 1384 199 C1365 201 1350 213 1337 230"/>
+      </svg>
+
+      <div class="section-content">
+        <div>
+          <div class="section-heading">
+            <div>
+              <span class="section-number">03.</span>
+              <h2 style="display:inline">Experience</h2>
+              <div class="section-sub">Where I applied and grew my skills.</div>
+            </div>
+          </div>
+
+          <div class="timeline" id="experience-list">
+            <div class="timeline-item">
+              <div class="date">February 2026 — June 2026</div>
+              <div>
+                <b>Algérie Télécom</b>
+                <em>Graduation Project Intern · Algiers, Algeria</em>
+                <p>Worked on the design, implementation, and evaluation of a RAG-based question-answering system for technical PDF documents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="education">
+          <div class="section-heading">
+            <div>
+              <span class="section-number">04.</span>
+              <h2 style="display:inline">Education</h2>
+              <div class="section-sub">My academic background.</div>
+            </div>
+          </div>
+
+          <div class="timeline" id="education-list">
+            <div class="timeline-item">
+              <div class="date">2021 — 2026</div>
+              <div>
+                <b>ENSTICP</b>
+                <em>Telecommunications and Information Technology Engineering</em>
+                <p>Engineering Degree · Graduated · Excellent · Algeria</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="date">2021</div>
+              <div>
+                <b>Baccalaureate</b>
+                <em>Mathematics</em>
+                <p>Completed · Algeria</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="glow left"></div>
+
+      <svg class="edge-art" viewBox="0 0 1440 260"
+        preserveAspectRatio="none" aria-hidden="true">
+        <path class="line fine" d="M-65 36 C-4 55 24 84 40 113 C53 138 46 158 23 176"/>
+        <path class="line pink" d="M1490 170 C1447 156 1418 138 1394 141 C1372 144 1358 158 1345 172"/>
+      </svg>
+
+      <div class="section-content">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">05.</span>
+            <h2 style="display:inline">Skills</h2>
+            <div class="section-sub">Tools and technologies I work with.</div>
+          </div>
+        </div>
+
+        <div class="skill-grid" id="skills-grid">
+          <div class="skill-card">
+            <div class="skill-title"><span class="skill-symbol">&lt;/&gt;</span>Programming</div>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-title"><span class="skill-symbol">◉</span>AI / Machine Learning</div>
+            <div class="tags"><span class="tag">RAG</span><span class="tag">LLMs</span><span class="tag">Scikit-learn</span><span class="tag">Embeddings</span><span class="tag">Reranking</span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-title"><span class="skill-symbol">▤</span>Data &amp; Databases</div>
+            <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">Pandas</span><span class="tag">SQL</span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-title"><span class="skill-symbol">⌘</span>Frameworks &amp; Tools</div>
+            <div class="tags"><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">Git</span><span class="tag">Linux</span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-title"><span class="skill-symbol">▦</span>Web Development</div>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">REST APIs</span><span class="tag">Supabase</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="glow right-pink"></div>
+
+      <svg class="edge-art" viewBox="0 0 1440 220"
+        preserveAspectRatio="none" aria-hidden="true">
+        <path class="line fine" d="M-60 162 C2 143 34 153 60 177 C79 195 105 203 135 207"/>
+        <path class="line purple" d="M1490 44 C1435 61 1407 89 1414 117 C1420 139 1452 151 1490 166"/>
+        <path class="line pink" d="M1490 82 C1448 98 1429 119 1436 139"/>
+      </svg>
+
+      <div class="section-content contact-layout">
+        <div>
+          <div class="section-heading">
+            <div>
+              <span class="section-number">06.</span>
+              <h2 style="display:inline">Contact</h2>
+            </div>
+          </div>
+
+          <h2>Let's build <span>something intelligent.</span></h2>
+          <p>I'm open to AI/ML opportunities, collaborations, and conversations about AI, data, and interesting ideas.</p>
+
+          <div class="actions">
+            <a class="btn primary" data-link="email" href="mailto:mekhazni.nihad@gmail.com">✉ &nbsp; Email Me</a>
+            <a class="btn" data-link="linkedin" href="https://www.linkedin.com/in/nihad-mekhazni-1aa594324" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn" data-link="github" href="https://github.com/Mekhazni" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="contact-art" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="brand">
+      <span data-profile="shortName">NM</span> <b>✦</b>
+      <small data-profile="name">Nihad Mekhazni</small>
+    </div>
+    <span>© <span id="current-year">2026</span> <span data-profile="name">Nihad Mekhazni</span> · Built with curiosity for AI and technology.</span>
+    <a class="back-top" href="#home">Back to top ↑</a>
+  </footer>
+
+
+  </div>
+
+  <!-- EXPANDED ABOUT MODAL -->
+  <div class="about-modal" id="about-modal" hidden>
+    <div
+      class="about-modal-backdrop"
+      data-about-modal-close
+    ></div>
+
+    <section
+      class="about-modal-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="about-modal-title"
+      tabindex="-1"
+    >
+      <button
+        class="about-modal-close"
+        type="button"
+        data-about-modal-close
+        aria-label="Close About Me window"
+      >
+        &times;
+      </button>
+
+      <div class="about-modal-header">
+        <span class="section-number">ABOUT ME</span>
+        <h2 id="about-modal-title">A little more about me</h2>
+        <p>
+          Learn more about my background, interests, projects,
+          and professional direction.
+        </p>
+      </div>
+
+      <div
+        class="about-modal-content"
+        id="about-modal-content"
+      >
+        <!-- Sections will be populated from profile.json -->
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

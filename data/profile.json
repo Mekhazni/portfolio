@@ -1,0 +1,56 @@
+{
+  "name": "Nihad Mekhazni",
+  "shortName": "NM",
+  "headline": "Telecommunications & Information Technology Engineering Graduate",
+  "targetRole": "Aspiring AI/ML Engineer",
+  "interests": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Information Retrieval",
+    "Software Engineering"
+  ],
+  "location": "Algeria",
+  "education": {
+    "institution": "ENSTICP",
+    "field": "Telecommunications and Information Technology",
+    "startYear": 2021,
+    "graduationYear": 2026,
+    "result": "Excellent"
+  },
+  "about": [
+    "I'm a Telecommunications and Information Technology Engineering graduate interested in AI, machine learning, and intelligent systems.",
+    "My graduation project focused on building a RAG-based question-answering system for technical PDF documents."
+  ],
+  "aboutDetails": [
+    {
+      "id": "background",
+      "title": "Background",
+      "icon": "user-round",
+      "text": "Example text about my academic background, engineering education, and professional experience."
+    },
+    {
+      "id": "areas-of-interest",
+      "title": "Areas of Interest",
+      "icon": "brain",
+      "text": "Example text about my interests in artificial intelligence, machine learning, information retrieval, and software engineering."
+    },
+    {
+      "id": "featured-work",
+      "title": "Featured Work",
+      "icon": "code-2",
+      "text": "Example text introducing my graduation project and the technical work involved in developing a RAG-based question-answering system."
+    },
+    {
+      "id": "career-goals",
+      "title": "Career Goals",
+      "icon": "target",
+      "text": "Example text about my professional direction, the skills I want to develop, and my goal of growing as an AI/ML engineer."
+    }
+  ],
+  "contact": {
+    "email": "mekhazni.nih​ad@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/nihad-mekhazni-1aa594324",
+    "github": "https://github.com/Mekhazni",
+    "cv": "assets/files/MEKHAZNI_Nihad_resume.pdf"
+  }
+}

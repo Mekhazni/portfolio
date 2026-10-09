@@ -1,0 +1,179 @@
+
+{
+  "featuredProject": "rag-knowledge-retrieval",
+  "projects": [
+    {
+      "id": "rag-knowledge-retrieval",
+      "title": "AI-Powered Retrieval-Augmented Generation (RAG) System",
+      "featured": true,
+      "category": "graduation project",
+      "status": "Graduation Project · 2026",
+
+      "card": {
+        "description": "An end-to-end RAG system for retrieving information from telecommunications technical documentation and generating grounded answers with citations.",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "FAISS",
+          "PostgreSQL",
+          "pgvector",
+          "Supabase",
+          "Gemma 3"
+        ],
+        "image": ""
+      },
+
+      "details": {
+        "subtitle": "Graduation Project · 2026",
+        "overview": "Designed, implemented, and evaluated an end-to-end RAG system for retrieving information from telecommunications technical documentation and generating grounded answers with citations.",
+
+        "problem": "Retrieving reliable information from technical documentation requires finding relevant passages and checking whether the available evidence supports an answer.",
+
+        "solution": "Developed a retrieval pipeline with query routing, semantic and lexical retrieval, contextual reranking, and LLM-based generation, with a verification step before answer generation.",
+
+        "features": [
+          "Query router to determine whether a query requires rewriting",
+          "Semantic and lexical retrieval",
+          "Contextual reranking of retrieved passages",
+          "LLM-based verification of retrieved-context sufficiency",
+          "Weighted Reciprocal Rank Fusion combining semantic retrieval and BM25",
+          "Grounded answer generation with citations",
+          "Authentication and document management",
+          "Chat history and citation-based document navigation"
+        ],
+
+        "methodology": [
+          "Query routing and conditional query rewriting",
+          "Hybrid semantic and lexical retrieval",
+          "Weighted Reciprocal Rank Fusion",
+          "Contextual reranking",
+          "LLM-based context verification",
+          "Grounded answer generation"
+        ],
+
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "FAISS",
+          "PostgreSQL",
+          "pgvector",
+          "Supabase",
+          "Ollama",
+          "Gemma 3:12b",
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+
+        "links": {
+          "github": "",
+          "demo": "",
+          "report": ""
+        }
+      }
+    },
+
+    {
+      "id": "business-intelligence-system",
+      "title": "Business Intelligence System",
+      "featured": false,
+      "category": "Data & Business Intelligence",
+      "status": "Academic Project",
+
+      "card": {
+        "description": "A business intelligence pipeline integrating data warehouse modeling, ETL workflows, dashboards, and predictive analytics.",
+        "technologies": [
+          "MySQL",
+          "Talend",
+          "Power BI",
+          "KNIME"
+        ],
+        "image": ""
+      },
+
+      "details": {
+        "subtitle": "Academic Project",
+        "overview": "Designed a business intelligence pipeline covering data warehouse modeling, ETL workflows, dashboards, and predictive analytics.",
+
+        "problem": "Business intelligence workflows require structured data integration and analysis to support reporting and decision-making.",
+
+        "solution": "Designed a pipeline combining data warehouse modeling, ETL processes, visualization dashboards, and predictive analytics.",
+
+        "features": [
+          "Data warehouse modeling",
+          "ETL workflows",
+          "Dashboard development",
+          "Predictive analytics",
+          "Data integration and visualization"
+        ],
+
+        "methodology": [],
+
+        "technologies": [
+          "MySQL",
+          "Talend",
+          "Power BI",
+          "KNIME"
+        ],
+
+        "links": {
+          "github": "",
+          "demo": "",
+          "report": ""
+        }
+      }
+    },
+
+    {
+      "id": "machine-learning-ctr-prediction",
+      "title": "Machine Learning CTR Prediction",
+      "featured": false,
+      "category": "Machine Learning",
+      "status": "Academic Project",
+
+      "card": {
+        "description": "A machine learning project applying feature engineering and predictive models to estimate advertisement click-through rates.",
+        "technologies": [
+          "Python",
+          "Feature Engineering",
+          "Machine Learning"
+        ],
+        "image": ""
+      },
+
+      "details": {
+        "subtitle": "Machine Learning Project",
+        "overview": "Applied feature engineering and machine learning models to predict advertisement click-through rates using a real-world dataset.",
+
+        "problem": "Predicting whether an advertisement will receive a click is a classification task that can be approached using historical data and engineered features.",
+
+        "solution": "Applied feature engineering, trained machine learning models, and evaluated and compared different approaches using a real-world dataset.",
+
+        "features": [
+          "Feature engineering",
+          "Machine learning model development",
+          "Model evaluation",
+          "Comparison of different approaches"
+        ],
+
+        "methodology": [
+          "Feature engineering",
+          "Model training",
+          "Model evaluation and comparison"
+        ],
+
+        "technologies": [
+          "Python",
+          "Feature Engineering",
+          "Machine Learning"
+        ],
+
+        "links": {
+          "github": "",
+          "demo": "",
+          "report": ""
+        }
+      }
+    }
+  ]
+}

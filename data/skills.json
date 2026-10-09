@@ -1,0 +1,71 @@
+
+{
+  "categories": [
+    {
+      "id": "programming",
+      "title": "Programming",
+      "skills": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "SQL"
+      ]
+    },
+    {
+      "id": "ai-machine-learning",
+      "title": "AI / Machine Learning",
+      "skills": [
+        "Retrieval-Augmented Generation (RAG)",
+        "Large Language Models (LLMs)",
+        "Scikit-learn",
+        "Embeddings",
+        "Reranking",
+        "Feature Engineering",
+
+        "Retrieval-Augmented Generation (RAG)",
+        "Large Language Models (LLMs)",
+        "Scikit-learn",
+        "Embeddings",
+        "Reranking",
+        "Feature Engineering"
+      ]
+    },
+    {
+      "id": "data-databases",
+      "title": "Data & Databases",
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "pgvector",
+        "Pandas",
+        "Data Warehousing",
+        "ETL"
+      ]
+    },
+    {
+      "id": "frameworks-tools",
+      "title": "Frameworks & Tools",
+      "skills": [
+        "FastAPI",
+        "Supabase",
+        "Ollama",
+        "FAISS",
+        "Talend",
+        "Power BI",
+        "KNIME",
+        "Git",
+        "Linux"
+      ]
+    },
+    {
+      "id": "web",
+      "title": "Web Development",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "REST APIs"
+      ]
+    }
+  ]
+}

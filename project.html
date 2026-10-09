@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore project details, methodologies, technologies, and implementation highlights."
+  >
+
+  <title>Project Details | Nihad Mekhazni</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* PROJECT DETAIL PAGE */
+
+    .project-page {
+      min-height: 100vh;
+      padding: 34px 0 70px;
+    }
+
+    .project-container {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+    }
+
+    .project-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      color: #c7b4ed;
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .project-back:hover {
+      color: #f18bea;
+    }
+
+    .project-hero {
+      position: relative;
+      padding: 34px;
+      border: 1px solid rgba(193, 96, 255, 0.42);
+      border-radius: 18px;
+      background:
+        radial-gradient(
+          circle at 90% 0%,
+          rgba(132, 65, 220, 0.15),
+          transparent 42%
+        ),
+        linear-gradient(
+          115deg,
+          rgba(23, 14, 43, 0.96),
+          rgba(9, 8, 20, 0.96)
+        );
+      box-shadow: 0 0 35px rgba(147, 58, 255, 0.07);
+      overflow: hidden;
+    }
+
+    .project-hero::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(#bd74ff, #ff5bd8);
+      box-shadow: 0 0 12px #ba5bff;
+    }
+
+    .project-eyebrow {
+      margin-bottom: 13px;
+      color: #e784f1;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      max-width: 800px;
+      margin: 0 0 14px;
+      color: #f5efff;
+      font-size: clamp(27px, 5vw, 43px);
+      line-height: 1.17;
+      letter-spacing: -0.035em;
+      overflow-wrap: anywhere;
+    }
+
+    .project-subtitle {
+      margin: 0 0 22px;
+      color: #b9a9d8;
+      font-size: 13px;
+    }
+
+    .project-overview {
+      max-width: 760px;
+      color: #d2c8e5;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .project-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 10px 15px;
+      border: 1px solid rgba(170, 119, 255, 0.4);
+      border-radius: 9px;
+      background: rgba(96, 67, 163, 0.14);
+      color: #e8dcff;
+      font-size: 12px;
+      text-decoration: none;
+      transition:
+        transform 0.2s,
+        border-color 0.2s,
+        background 0.2s;
+    }
+
+    .project-action:hover {
+      transform: translateY(-2px);
+      border-color: rgba(235, 94, 224, 0.75);
+      background: rgba(126, 69, 180, 0.2);
+    }
+
+    .project-action.primary {
+      border-color: rgba(196, 111, 255, 0.65);
+      background: linear-gradient(
+        110deg,
+        rgba(125, 68, 190, 0.28),
+        rgba(188, 70, 171, 0.18)
+      );
+    }
+
+    .project-section {
+      margin-top: 22px;
+      padding: 26px;
+      border: 1px solid rgba(151, 103, 255, 0.24);
+      border-radius: 15px;
+      background: rgba(13, 10, 25, 0.68);
+    }
+
+    .project-section h2 {
+      margin: 0 0 15px;
+      color: #f0e7ff;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .project-section p {
+      margin: 0;
+      color: #c9bedb;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .project-section + .project-section {
+      margin-top: 16px;
+    }
+
+    .project-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 5px;
+    }
+
+    .project-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid rgba(151, 103, 255, 0.19);
+      border-radius: 10px;
+      background: rgba(96, 67, 163, 0.08);
+      color: #d7cce9;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .project-feature-mark {
+      flex-shrink: 0;
+      color: #dc85f4;
+    }
+
+    .project-method-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: method;
+    }
+
+    .project-method-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #d7cce9;
+      font-size: 13px;
+      line-height: 1.7;
+      counter-increment: method;
+    }
+
+    .project-method-list li::before {
+      content: counter(method, decimal-leading-zero);
+      flex-shrink: 0;
+      color: #d68bff;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+
+    .project-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .project-tech {
+      padding: 7px 11px;
+      border: 1px solid rgba(155, 117, 240, 0.28);
+      border-radius: 99px;
+      background: rgba(96, 67, 163, 0.16);
+      color: #d7c8ff;
+      font-size: 11px;
+    }
+
+    .project-footer {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(151, 103, 255, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .project-footer p {
+      margin: 0;
+      color: #998caf;
+      font-size: 12px;
+    }
+
+    .project-state {
+      padding: 45px 10px;
+      color: #d2c8e5;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .project-state h1 {
+      color: #f5efff;
+      font-size: 25px;
+    }
+
+    .project-state a {
+      color: #e784f1;
+    }
+
+    @media (max-width: 620px) {
+      .project-page {
+        padding-top: 22px;
+      }
+
+      .project-container {
+        width: calc(100% - 28px);
+      }
+
+      .project-back {
+        margin-bottom: 22px;
+      }
+
+      .project-hero {
+        padding: 25px 21px;
+      }
+
+      .project-section {
+        padding: 21px 17px;
+      }
+
+      .project-feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-title {
+        font-size: clamp(25px, 8vw, 35px);
+      }
+
+      .project-actions {
+        align-items: stretch;
+      }
+
+      .project-action {
+        flex: 1 1 auto;
+      }
+
+      .project-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-action,
+      .project-back {
+        transition: none;
+      }
+    }
+
+
+/* FIX: isolate project detail layout from global styles */
+
+.project-page,
+.project-page * {
+  box-sizing: border-box;
+}
+
+.project-page .project-hero {
+  display: block;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+}
+
+.project-page .project-title {
+  display: block;
+  width: 100%;
+}
+
+.project-page .project-subtitle,
+.project-page .project-overview {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+}
+
+.project-page .project-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.project-page .project-action {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.project-page .project-section {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.project-page .project-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 620px) {
+  .project-page .project-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* PROJECT PAGE — LIGHT MODE */
+html[data-theme="light"] .project-back {
+  color: #7654a8;
+}
+
+html[data-theme="light"] .project-back:hover {
+  color: #bd4da9;
+}
+
+html[data-theme="light"] .project-hero {
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(190, 151, 240, 0.16),
+      transparent 42%
+    ),
+    #fffaff;
+  border-color: #dfb9ff;
+}
+
+html[data-theme="light"] .project-title {
+  color: #261833;
+}
+
+html[data-theme="light"] .project-eyebrow {
+  color: #bd4da9;
+}
+
+html[data-theme="light"] .project-subtitle {
+  color: #665575;
+}
+
+html[data-theme="light"] .project-overview {
+  color: #554663;
+}
+
+html[data-theme="light"] .project-action {
+  background: #f0e7fa;
+  border-color: #d5b6f3;
+  color: #553776;
+}
+
+html[data-theme="light"] .project-action.primary {
+  background: #e9d9f8;
+  border-color: #c89be9;
+  color: #4a286c;
+}
+
+html[data-theme="light"] .project-action:hover {
+  background: #e5d1f7;
+}
+
+html[data-theme="light"] .project-section {
+  background: #f0eaf7;
+  border-color: #ddd0ed;
+}
+
+html[data-theme="light"] .project-section h2 {
+  color: #30203f;
+}
+
+html[data-theme="light"] .project-section p,
+html[data-theme="light"] .project-feature,
+html[data-theme="light"] .project-method-list li {
+  color: #594966;
+}
+
+html[data-theme="light"] .project-feature {
+  background: #faf6ff;
+  border-color: #e1d2f2;
+}
+
+html[data-theme="light"] .project-feature-mark,
+html[data-theme="light"] .project-method-list li::before {
+  color: #965ac5;
+}
+
+html[data-theme="light"] .project-tech {
+  background: #eee3f9;
+  border-color: #d9c5ef;
+  color: #573879;
+}
+
+html[data-theme="light"] .project-footer {
+  border-color: #ddd0ed;
+}
+
+html[data-theme="light"] .project-footer p {
+  color: #756580;
+}
+
+html[data-theme="light"] .project-state {
+  color: #30203f;
+}
+
+
+
+/* ==========================================
+   TYPOGRAPHY UPDATE — PROJECT DETAIL PAGE
+   ========================================== */
+
+.project-back {
+  font-size: 14px;
+}
+
+.project-eyebrow {
+  font-size: 12px;
+}
+
+.project-title {
+  font-size: clamp(30px, 4.5vw, 46px);
+  line-height: 1.2;
+}
+
+.project-subtitle {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.project-overview {
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.project-action {
+  font-size: 14px;
+}
+
+.project-section h2 {
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.project-section p {
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.project-feature {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.project-method-list li {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.project-tech {
+  font-size: 13px;
+}
+
+.project-footer p {
+  font-size: 13px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  .project-container {
+    width: min(100% - 32px, 1000px);
+  }
+
+  .project-hero {
+    padding: 27px 22px;
+  }
+
+  .project-title {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+
+  .project-overview {
+    font-size: 16px;
+  }
+
+  .project-section {
+    padding: 22px 19px;
+  }
+
+  .project-section h2 {
+    font-size: 21px;
+  }
+
+  .project-section p {
+    font-size: 15px;
+  }
+
+  .project-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-feature,
+  .project-method-list li {
+    font-size: 14px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <main class="project-page">
+    <div class="project-container">
+
+      <a class="project-back" href="index.html#projects">
+        <span aria-hidden="true">←</span>
+        Back to portfolio
+      </a>
+
+      <div id="project-content" aria-live="polite">
+        <div class="project-state">Loading project details...</div>
+      </div>
+
+      <footer class="project-footer">
+        <p>Designed and built by Nihad Mekhazni.</p>
+        <a class="project-back" href="index.html#projects">
+          Explore other projects ↗
+        </a>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    document.documentElement.dataset.theme = savedTheme;
+  }
+</script>
+
+  <script>
+    (() => {
+      const container = document.querySelector("#project-content");
+
+      function makeElement(tag, className, text) {
+        const element = document.createElement(tag);
+
+        if (className) {
+          element.className = className;
+        }
+
+        if (text !== undefined && text !== null) {
+          element.textContent = text;
+        }
+
+        return element;
+      }
+
+      function addSection(parent, title, content) {
+        if (
+          content === undefined ||
+          content === null ||
+          content === "" ||
+          (Array.isArray(content) && content.length === 0)
+        ) {
+          return;
+        }
+
+        const section = makeElement("section", "project-section");
+        section.appendChild(makeElement("h2", "", title));
+
+        if (Array.isArray(content)) {
+          const list = makeElement("ul", "project-method-list");
+
+          content.forEach((item) => {
+            list.appendChild(makeElement("li", "", item));
+          });
+
+          section.appendChild(list);
+        } else {
+          section.appendChild(makeElement("p", "", content));
+        }
+
+        parent.appendChild(section);
+      }
+
+      function addFeatures(parent, features) {
+        if (!Array.isArray(features) || features.length === 0) {
+          return;
+        }
+
+        const section = makeElement("section", "project-section");
+        section.appendChild(makeElement("h2", "", "Key Features"));
+
+        const grid = makeElement("div", "project-feature-grid");
+
+        features.forEach((feature) => {
+          const item = makeElement("div", "project-feature");
+          item.appendChild(
+            makeElement("span", "project-feature-mark", "✦")
+          );
+          item.appendChild(makeElement("span", "", feature));
+          grid.appendChild(item);
+        });
+
+        section.appendChild(grid);
+        parent.appendChild(section);
+      }
+
+      function addTechnologies(parent, technologies) {
+        if (!Array.isArray(technologies) || technologies.length === 0) {
+          return;
+        }
+
+        const section = makeElement("section", "project-section");
+        section.appendChild(makeElement("h2", "", "Technologies"));
+
+        const list = makeElement("div", "project-tech-list");
+
+        technologies.forEach((technology) => {
+          list.appendChild(
+            makeElement("span", "project-tech", technology)
+          );
+        });
+
+        section.appendChild(list);
+        parent.appendChild(section);
+      }
+
+      function addExternalLink(parent, label, url) {
+        if (
+          typeof url !== "string" ||
+          !/^https?:\/\//i.test(url)
+        ) {
+          return;
+        }
+
+        const link = makeElement("a", "project-action", label);
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        parent.appendChild(link);
+      }
+
+      function renderProject(project) {
+        const details = project.details || {};
+        const card = project.card || {};
+        const links = details.links || {};
+
+        container.replaceChildren();
+
+        const hero = makeElement("header", "project-hero");
+
+        hero.appendChild(
+          makeElement(
+            "div",
+            "project-eyebrow",
+            project.category || "Project"
+          )
+        );
+
+        hero.appendChild(
+          makeElement("h1", "project-title", project.title || "Untitled Project")
+        );
+
+        hero.appendChild(
+          makeElement(
+            "p",
+            "project-subtitle",
+            details.subtitle || project.status || ""
+          )
+        );
+
+        const overview = makeElement(
+          "div",
+          "project-overview",
+          details.overview || card.description || ""
+        );
+        hero.appendChild(overview);
+
+        const actions = makeElement("div", "project-actions");
+
+        const backLink = makeElement(
+          "a",
+          "project-action primary",
+          "← Back to portfolio"
+        );
+        backLink.href = "index.html#projects";
+        actions.appendChild(backLink);
+
+        addExternalLink(actions, "GitHub ↗", links.github);
+        addExternalLink(actions, "Live Demo ↗", links.demo);
+        addExternalLink(actions, "Project Report ↗", links.report);
+
+        hero.appendChild(actions);
+        container.appendChild(hero);
+
+        addSection(container, "The Problem", details.problem);
+        addSection(container, "The Solution", details.solution);
+        addFeatures(container, details.features);
+        addSection(container, "Methodology", details.methodology);
+        addTechnologies(
+          container,
+          details.technologies || card.technologies
+        );
+      }
+
+      async function init() {
+        const params = new URLSearchParams(window.location.search);
+        const projectId = params.get("id");
+
+        if (!projectId) {
+          container.innerHTML =
+            '<div class="project-state"><h1>No project selected</h1><p>Choose a project from the <a href="index.html#projects">portfolio</a>.</p></div>';
+          return;
+        }
+
+        try {
+          const response = await fetch("data/projects.json");
+
+          if (!response.ok) {
+            throw new Error("Could not load projects.json");
+          }
+
+          const data = await response.json();
+          const projects = Array.isArray(data.projects) ? data.projects : [];
+          const project = projects.find((item) => item.id === projectId);
+
+          if (!project) {
+            container.innerHTML =
+              '<div class="project-state"><h1>Project not found</h1><p>This project ID does not exist. Return to the <a href="index.html#projects">portfolio</a> and choose another project.</p></div>';
+            document.title = "Project Not Found | Nihad Mekhazni";
+            return;
+          }
+
+          document.title = `${project.title} | Nihad Mekhazni`;
+          renderProject(project);
+        } catch (error) {
+          console.error("Project page error:", error);
+
+          container.innerHTML =
+            '<div class="project-state"><h1>Unable to load project</h1><p>Make sure you are opening this page through Live Server and that <code>data/projects.json</code> is available.</p><p><a href="index.html#projects">Return to portfolio</a></p></div>';
+        }
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
