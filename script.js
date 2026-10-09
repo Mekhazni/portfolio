@@ -99,6 +99,7 @@ function formatDateRange(start, end) {
   return start || end || "";
 }
 
+
 function setLink(element, field, contact) {
   if (!element) return;
 
@@ -113,6 +114,13 @@ function setLink(element, field, contact) {
 
   if (field === "email") {
     element.href = `mailto:${value}`;
+  } else if (field === "phone") {
+    element.href = `tel:${value.replace(/[^\d+]/g, "")}`;
+
+    const phoneText = element.querySelector("[data-contact-phone]");
+    if (phoneText) {
+      phoneText.textContent = value;
+    }
   } else if (field === "cv") {
     element.href = value;
     element.setAttribute("download", "");
@@ -125,6 +133,7 @@ function setLink(element, field, contact) {
     element.rel = "noopener noreferrer";
   }
 }
+
 
 
 /* ========================================
