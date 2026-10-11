@@ -2,16 +2,16 @@
 {
   "education": [
     {
-      "id": "ensticp-engineering-degree",
-      "institution": "ENSTICP",
-      "degree": "Engineering Degree",
-      "field": "Telecommunications and Information Technology",
-      "startYear": 2021,
-      "endYear": 2026,
-      "status": "Graduated",
-      "result": "Excellent",
-      "location": "Algeria"
-    },
+  "id": "ensticp-engineering-degree",
+  "institution": "ENSTICP",
+  "degree": "State Engineer's Degree",
+  "field": "Systems of Telecommunications and Networks",
+  "startYear": 2021,
+  "endYear": 2026,
+  "status": "Graduated",
+  "result": "Excellent",
+  "location": "Algeria"
+},
     {
       "id": "baccalaureate-mathematics",
       "institution": "",
