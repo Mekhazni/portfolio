@@ -1,4 +1,3 @@
-
 {
   "categories": [
     {
@@ -8,26 +7,28 @@
         "Python",
         "Java",
         "JavaScript",
-        "SQL"
+        "SQL",
+        "HTML",
+        "CSS"
       ]
     },
     {
       "id": "ai-machine-learning",
       "title": "AI / Machine Learning",
       "skills": [
+        "Machine Learning",
+        "Scikit-learn",
         "Retrieval-Augmented Generation (RAG)",
         "Large Language Models (LLMs)",
-        "Scikit-learn",
+        "Transformers",
         "Embeddings",
+        "Semantic Search",
+        "Hybrid Retrieval",
+        "Query Rewriting",
         "Reranking",
-        "Feature Engineering",
-
-        "Retrieval-Augmented Generation (RAG)",
-        "Large Language Models (LLMs)",
-        "Scikit-learn",
-        "Embeddings",
-        "Reranking",
-        "Feature Engineering"
+        "Contextual Reranking",
+        "Prompt Engineering",
+        "LLM Evaluation"
       ]
     },
     {
@@ -37,7 +38,9 @@
         "PostgreSQL",
         "MySQL",
         "pgvector",
+        "Supabase",
         "Pandas",
+        "NumPy",
         "Data Warehousing",
         "ETL"
       ]
@@ -46,25 +49,17 @@
       "id": "frameworks-tools",
       "title": "Frameworks & Tools",
       "skills": [
+        "LangChain",
         "FastAPI",
-        "Supabase",
-        "Ollama",
         "FAISS",
+        "Ollama",
+        "REST APIs",
         "Talend",
         "Power BI",
         "KNIME",
-        "Git",
-        "Linux"
-      ]
-    },
-    {
-      "id": "web",
-      "title": "Web Development",
-      "skills": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "REST APIs"
+        "Jupyter Notebook",
+        "VS Code",
+        "Android Studio"
       ]
     }
   ]
