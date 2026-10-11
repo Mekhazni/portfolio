@@ -1,4 +1,3 @@
-
 {
   "featuredProject": "rag-knowledge-retrieval",
   "projects": [
@@ -8,7 +7,6 @@
       "featured": true,
       "category": "graduation project",
       "status": "Graduation Project · 2026",
-
       "card": {
         "description": "An end-to-end RAG system for retrieving information from telecommunications technical documentation and generating grounded answers with citations.",
         "technologies": [
@@ -22,158 +20,255 @@
         ],
         "image": ""
       },
-
       "details": {
         "subtitle": "Graduation Project · 2026",
         "overview": "Designed, implemented, and evaluated an end-to-end RAG system for retrieving information from telecommunications technical documentation and generating grounded answers with citations.",
-
-        "problem": "Retrieving reliable information from technical documentation requires finding relevant passages and checking whether the available evidence supports an answer.",
-
-        "solution": "Developed a retrieval pipeline with query routing, semantic and lexical retrieval, contextual reranking, and LLM-based generation, with a verification step before answer generation.",
-
-        "features": [
-          "Query router to determine whether a query requires rewriting",
-          "Semantic and lexical retrieval",
-          "Contextual reranking of retrieved passages",
-          "LLM-based verification of retrieved-context sufficiency",
-          "Weighted Reciprocal Rank Fusion combining semantic retrieval and BM25",
-          "Grounded answer generation with citations",
-          "Authentication and document management",
-          "Chat history and citation-based document navigation"
+        "sections": [
+          {
+            "title": "The Problem",
+            "type": "text",
+            "content": "Technical telecommunications documentation contains extensive specifications and detailed information spread across multiple PDF documents. Finding the right passages, resolving follow-up questions, and verifying the source of an answer can be time-consuming. General-purpose language models may also produce answers that are not adequately supported by the available documentation."
+          },
+          {
+            "title": "The Solution",
+            "type": "text",
+            "content": "Designed and implemented a web-based RAG system that retrieves relevant information from technical PDFs and generates answers grounded in the retrieved content. The system combines semantic and lexical search, contextual reranking, and history-aware query rewriting, with a context-verification step and page-level citations. A complete web application supports document management, authenticated access, conversational interactions, and source inspection."
+          },
+          {
+            "title": "Key Features",
+            "type": "features",
+            "content": [
+              "PDF Document Management — Upload technical PDFs and track their indexing status.",
+              "Conversational Question Answering — Ask questions and follow up while using conversation history to understand the context.",
+              "Intelligent Query Routing & Rewriting — Determine whether a question needs rewriting and, when necessary, use conversation history to reformulate follow-up questions into clearer, context-aware queries before retrieval.",
+              "Hybrid Information Retrieval — Combine semantic search with keyword-based retrieval to find relevant passages.",
+              "Contextual Reranking — Reorder retrieved passages to prioritize the most relevant information.",
+              "Grounded Answers with Citations — Generate answers supported by retrieved content, with source and page references.",
+              "Source Inspection — Open a citation to inspect the retrieved passage and corresponding PDF page.",
+              "Context Verification — Check whether the retrieved information is sufficient before generating an answer.",
+              "User Accounts and Chat History — Authenticate users and manage their conversations."
+            ]
+          },
+          {
+            "title": "Methodology",
+            "type": "steps",
+            "content": [
+              {
+                "title": "Query Routing & Rewriting",
+                "description": "Determine whether a question needs rewriting and, when necessary, use conversation history to clarify its meaning."
+              },
+              {
+                "title": "Document Processing & Chunking",
+                "description": "Extract and clean PDF content, then organize it into parent and child chunks to support retrieval and provide broader context."
+              },
+              {
+                "title": "Hybrid Retrieval",
+                "description": "Search for relevant passages using semantic embeddings and lexical keyword matching."
+              },
+              {
+                "title": "Contextual Reranking",
+                "description": "Reorder retrieved passages to prioritize the most relevant evidence."
+              },
+              {
+                "title": "Context Verification",
+                "description": "Assess whether the retrieved information is sufficient to answer the question."
+              },
+              {
+                "title": "Grounded Answer Generation",
+                "description": "Generate an answer from the retrieved context, include source and page citations, and avoid answering when the available evidence is insufficient."
+              }
+            ]
+          },
+          {
+            "title": "Technologies & Tools",
+            "type": "technologies",
+            "categories": [
+              {
+                "title": "AI & Information Retrieval",
+                "items": [
+                  "Snowflake Arctic Embed",
+                  "GTE ModernBERT",
+                  "Gemma 3",
+                  "Llama 3",
+                  "LangChain"
+                ]
+              },
+              {
+                "title": "Backend & API",
+                "items": [
+                  "Python",
+                  "FastAPI"
+                ]
+              },
+              {
+                "title": "Database & Storage",
+                "items": [
+                  "Supabase",
+                  "PostgreSQL",
+                  "pgvector"
+                ]
+              },
+              {
+                "title": "Frontend",
+                "items": [
+                  "HTML",
+                  "CSS",
+                  "JavaScript"
+                ]
+              },
+              {
+                "title": "Local Model Runtime",
+                "items": [
+                  "Ollama"
+                ]
+              }
+            ]
+          }
         ],
-
-        "methodology": [
-          "Query routing and conditional query rewriting",
-          "Hybrid semantic and lexical retrieval",
-          "Weighted Reciprocal Rank Fusion",
-          "Contextual reranking",
-          "LLM-based context verification",
-          "Grounded answer generation"
-        ],
-
-        "technologies": [
-          "Python",
-          "FastAPI",
-          "FAISS",
-          "PostgreSQL",
-          "pgvector",
-          "Supabase",
-          "Ollama",
-          "Gemma 3:12b",
-          "HTML",
-          "CSS",
-          "JavaScript"
-        ],
-
         "links": {
-          "github": "",
-          "demo": "",
-          "report": ""
-        }
+          "github": ""
+        },
+        "media": [
+          {
+            "type": "",
+            "src": "",
+            "description": ""
+          }
+        ],
+        "documents": [
+          {
+            "title": "",
+            "type": "",
+            "url": ""
+          }
+        ]
       }
     },
-
     {
-      "id": "business-intelligence-system",
-      "title": "Business Intelligence System",
-      "featured": false,
-      "category": "Data & Business Intelligence",
-      "status": "Academic Project",
-
-      "card": {
-        "description": "A business intelligence pipeline integrating data warehouse modeling, ETL workflows, dashboards, and predictive analytics.",
-        "technologies": [
-          "MySQL",
-          "Talend",
-          "Power BI",
-          "KNIME"
-        ],
-        "image": ""
-      },
-
-      "details": {
-        "subtitle": "Academic Project",
-        "overview": "Designed a business intelligence pipeline covering data warehouse modeling, ETL workflows, dashboards, and predictive analytics.",
-
-        "problem": "Business intelligence workflows require structured data integration and analysis to support reporting and decision-making.",
-
-        "solution": "Designed a pipeline combining data warehouse modeling, ETL processes, visualization dashboards, and predictive analytics.",
-
-        "features": [
-          "Data warehouse modeling",
-          "ETL workflows",
-          "Dashboard development",
-          "Predictive analytics",
-          "Data integration and visualization"
-        ],
-
-        "methodology": [],
-
-        "technologies": [
-          "MySQL",
-          "Talend",
-          "Power BI",
-          "KNIME"
-        ],
-
-        "links": {
-          "github": "jjjjj",
-          "demo": "",
-          "report": ""
-        }
-      }
+  "id": "business-intelligence-system",
+  "title": "Business Intelligence System",
+  "featured": false,
+  "category": "Data & Business Intelligence",
+  "status": "Academic Project",
+  "card": {
+    "description": "A business intelligence pipeline integrating data warehouse modeling, ETL workflows, dashboards, and predictive analytics.",
+    "technologies": [
+      "MySQL",
+      "Talend",
+      "Power BI",
+      "KNIME"
+    ],
+    "image": ""
+  },
+  "details": {
+    "subtitle": "Academic Project",
+    "overview": "Designed and implemented a business intelligence pipeline using generated datasets covering books, customers, sales, and stores. The project integrates data warehousing, ETL workflows, dashboard development, and predictive analytics.",
+    "problem": "Book sales data from multiple related datasets needs to be integrated and organized to support effective reporting and analysis.",
+    "solution": "Developed a business intelligence pipeline combining data warehouse modeling, ETL processes, data visualization, and analytical workflows using Talend, MySQL, Power BI, and KNIME.",
+    "features": [
+      "Data warehouse modeling",
+      "ETL workflows and data integration",
+      "Dashboard development and data visualization",
+      "Book sales data analysis",
+      "Predictive analytics"
+    ],
+    "methodology": [],
+    "technologies": [
+      "MySQL",
+      "Talend",
+      "Power BI",
+      "KNIME"
+    ],
+    "links": {
+      "github": ""
     },
-
+    "media": [],
+    "documents": []
+  }
+},
     {
-      "id": "machine-learning-ctr-prediction",
-      "title": "Machine Learning CTR Prediction",
-      "featured": false,
-      "category": "Machine Learning",
-      "status": "Academic Project",
+  "id": "machine-learning-ctr-prediction",
+  "title": "Machine Learning CTR Prediction",
+  "featured": false,
+  "category": "Machine Learning",
+  "status": "Academic Project",
+  "card": {
+    "description": "A machine learning project applying predictive models to estimate advertisement click-through rates.",
+    "technologies": [
+      "Python",
+      "Machine Learning"
+    ],
+    "image": ""
+  },
+  "details": {
+    "subtitle": "Machine Learning Project",
+    "overview": "Applied machine learning techniques to predict advertisement click-through rates using a real-world dataset.",
+    "problem": "Predicting whether an advertisement will receive a click is a classification task that can be approached using historical data.",
+    "solution": "Applied machine learning models to predict advertisement click-through rates and evaluated their performance using a dataset.",
+    "features": [
+      "Advertisement click-through rate prediction",
+      "Machine learning model development",
+      "Model evaluation",
+      "Comparison of different approaches"
+    ],
+    "methodology": [
+      "Dataset preparation",
+      "Model training",
+      "Model evaluation and comparison"
+    ],
+    "technologies": [
+      "Python",
+      "Machine Learning"
+    ],
+    "links": {
+      "github": ""
+    },
+    "media": [],
+    "documents": []
+  }
+},
 
-      "card": {
-        "description": "A machine learning project applying feature engineering and predictive models to estimate advertisement click-through rates.",
-        "technologies": [
-          "Python",
-          "Feature Engineering",
-          "Machine Learning"
-        ],
-        "image": ""
-      },
 
-      "details": {
-        "subtitle": "Machine Learning Project",
-        "overview": "Applied feature engineering and machine learning models to predict advertisement click-through rates using a real-world dataset.",
-
-        "problem": "Predicting whether an advertisement will receive a click is a classification task that can be approached using historical data and engineered features.",
-
-        "solution": "Applied feature engineering, trained machine learning models, and evaluated and compared different approaches using a real-world dataset.",
-
-        "features": [
-          "Feature engineering",
-          "Machine learning model development",
-          "Model evaluation",
-          "Comparison of different approaches"
-        ],
-
-        "methodology": [
-          "Feature engineering",
-          "Model training",
-          "Model evaluation and comparison"
-        ],
-
-        "technologies": [
-          "Python",
-          "Feature Engineering",
-          "Machine Learning"
-        ],
-
-        "links": {
-          "github": "",
-          "demo": "",
-          "report": ""
-        }
-      }
-    }
+{
+  "id": "ocr-document-information-extraction",
+  "title": "OCR-Based Business Card Information Extraction",
+  "featured": false,
+  "category": "OCR & Document Processing",
+  "status": "Internship Project",
+  "card": {
+    "description": "A Python-based OCR pipeline for extracting information from business card documents using image preprocessing and text recognition.",
+    "technologies": [
+      "Python",
+      "Tesseract OCR"
+    ],
+    "image": ""
+  },
+  "details": {
+    "subtitle": "Internship Project · Algeria Partners · Jun–Aug 2025",
+    "overview": "Developed a Python-based OCR pipeline to extract information from business card documents. The workflow combined image preprocessing with Tesseract OCR to recognize text and support document information extraction.",
+    "problem": "Business card information stored in document files can be difficult to extract and organize manually, particularly when processing large collections of cards.",
+    "solution": "Developed an OCR pipeline using Python, image preprocessing, and Tesseract OCR to recognize text from business card documents and support information extraction.",
+    "features": [
+      "Business card document processing",
+      "Image preprocessing for OCR",
+      "Text recognition using Tesseract OCR",
+      "Information extraction from recognized text"
+    ],
+    "methodology": [
+      "Document and image preprocessing",
+      "Text recognition using Tesseract OCR",
+      "Information extraction from recognized text"
+    ],
+    "technologies": [
+      "Python",
+      "Tesseract OCR"
+    ],
+    "links": {
+      "github": ""
+    },
+    "media": [],
+    "documents": []
+  }
+}
   ]
 }
