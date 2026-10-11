@@ -239,6 +239,39 @@
       font-size: 11px;
     }
 
+        .project-tech-group + .project-tech-group {
+      margin-top: 22px;
+    }
+
+    .project-tech-category {
+      margin: 0 0 10px;
+      color: #d68bff;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    html[data-theme="light"] .project-tech-category {
+      color: #965ac5;
+    }
+
+    .project-method-list li > div {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .project-method-list li strong {
+      color: #f0e7ff;
+      font-weight: 600;
+    }
+
+    .project-method-list li p {
+      margin-top: 4px;
+    }
+
+    html[data-theme="light"] .project-method-list li strong {
+      color: #30203f;
+    }
+
     .project-footer {
       margin-top: 28px;
       padding-top: 22px;
@@ -580,6 +613,156 @@ html[data-theme="light"] .project-state {
   }
 }
 
+
+/* GitHub text link in the bottom-right of the hero */
+.project-hero {
+  position: relative;
+  padding-bottom: 62px;
+}
+
+.project-github-link {
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  color: #e784f1;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.project-github-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Demonstration media list */
+.project-media-list {
+  display: grid;
+  gap: 12px;
+  max-height: 430px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.project-media-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid rgba(151, 103, 255, 0.19);
+  border-radius: 10px;
+  background: rgba(96, 67, 163, 0.08);
+}
+
+.project-media-thumb {
+  width: 140px;
+  height: 85px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.project-media-description {
+  color: #d7cce9;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.project-document-list {
+  display: grid;
+  gap: 10px;
+}
+
+.project-document-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border: 1px solid rgba(151, 103, 255, 0.19);
+  border-radius: 9px;
+  color: #e2d2ff;
+  text-decoration: none;
+  background: rgba(96, 67, 163, 0.08);
+}
+
+.project-document-link:hover {
+  border-color: rgba(235, 94, 224, 0.75);
+}
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.project-lightbox[hidden] {
+  display: none;
+}
+
+.project-lightbox img,
+.project-lightbox video {
+  max-width: 95%;
+  max-height: 85vh;
+  border-radius: 10px;
+}
+
+.project-lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+html[data-theme="light"] .project-github-link {
+  color: #965ac5;
+}
+
+html[data-theme="light"] .project-media-description {
+  color: #594966;
+}
+
+html[data-theme="light"] .project-document-link {
+  color: #573879;
+  background: #faf6ff;
+  border-color: #e1d2f2;
+}
+
+@media (max-width: 620px) {
+  .project-github-link {
+    right: 20px;
+    bottom: 17px;
+  }
+
+  .project-media-row {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .project-media-thumb {
+    width: 95px;
+    height: 70px;
+  }
+
+  .project-media-description {
+    font-size: 12px;
+  }
+
+  .project-lightbox {
+    padding: 12px;
+  }
+}
+
+
   </style>
 </head>
 
@@ -595,6 +778,13 @@ html[data-theme="light"] .project-state {
       <div id="project-content" aria-live="polite">
         <div class="project-state">Loading project details...</div>
       </div>
+
+
+      <div id="project-lightbox" class="project-lightbox" hidden>
+        <button type="button" class="project-lightbox-close" aria-label="Close media viewer">&times;</button>
+        <div class="project-lightbox-content"></div>
+      </div>
+
 
       <footer class="project-footer">
         <p>Designed and built by Nihad Mekhazni.</p>
@@ -632,6 +822,10 @@ html[data-theme="light"] .project-state {
         return element;
       }
 
+      
+      const isRenderable = (value) =>
+        typeof value === "string" || typeof value === "number";
+
       function addSection(parent, title, content) {
         if (
           content === undefined ||
@@ -646,19 +840,143 @@ html[data-theme="light"] .project-state {
         section.appendChild(makeElement("h2", "", title));
 
         if (Array.isArray(content)) {
+          const entries = content.filter(isRenderable);
+
+          if (entries.length === 0) {
+            console.warn(`Section "${title}" has no renderable text entries.`);
+            return;
+          }
+
           const list = makeElement("ul", "project-method-list");
-
-          content.forEach((item) => {
-            list.appendChild(makeElement("li", "", item));
+          entries.forEach((entry) => {
+            list.appendChild(makeElement("li", "", entry));
           });
-
           section.appendChild(list);
-        } else {
+        } else if (isRenderable(content)) {
           section.appendChild(makeElement("p", "", content));
+        } else {
+          console.warn(`Section "${title}" has unsupported content; skipped.`);
+          return;
         }
 
         parent.appendChild(section);
       }
+
+            
+      /* ---------- Dynamic section renderers ---------- */
+
+      function startSection(parent, title) {
+        const section = makeElement("section", "project-section");
+        section.appendChild(makeElement("h2", "", title));
+        parent.appendChild(section);
+        return section;
+      }
+
+      const sectionRenderers = {
+        text(parent, item) {
+          addSection(parent, item.title, item.content);
+        },
+
+        features(parent, item) {
+          if (!Array.isArray(item.content) || item.content.length === 0) return;
+
+          const section = startSection(parent, item.title);
+          const grid = makeElement("div", "project-feature-grid");
+
+          item.content.forEach((feature) => {
+            const card = makeElement("div", "project-feature");
+            card.appendChild(makeElement("span", "project-feature-mark", "✦"));
+            card.appendChild(makeElement("span", "", feature));
+            grid.appendChild(card);
+          });
+
+          section.appendChild(grid);
+        },
+
+        steps(parent, item) {
+          if (!Array.isArray(item.content) || item.content.length === 0) return;
+
+          const section = startSection(parent, item.title);
+          const list = makeElement("ul", "project-method-list");
+
+          item.content.forEach((step) => {
+            const li = makeElement("li", "");
+
+            if (typeof step === "string") {
+              li.textContent = step;
+            } else if (step && typeof step === "object") {
+              const wrapper = makeElement("div", "");
+              wrapper.appendChild(makeElement("strong", "", step.title || ""));
+
+              if (step.description) {
+                wrapper.appendChild(makeElement("p", "", step.description));
+              }
+
+              li.appendChild(wrapper);
+            }
+
+            list.appendChild(li);
+          });
+
+          section.appendChild(list);
+        },
+
+        technologies(parent, item) {
+          if (Array.isArray(item.categories)) {
+            const categories = item.categories.filter(
+              (category) =>
+                category &&
+                Array.isArray(category.items) &&
+                category.items.length > 0
+            );
+
+            if (categories.length === 0) return;
+
+            const section = startSection(parent, item.title);
+
+            categories.forEach((category) => {
+              const group = makeElement("div", "project-tech-group");
+              group.appendChild(
+                makeElement("h3", "project-tech-category", category.title || "")
+              );
+
+              const list = makeElement("div", "project-tech-list");
+
+              category.items.forEach((technology) => {
+                list.appendChild(makeElement("span", "project-tech", technology));
+              });
+
+              group.appendChild(list);
+              section.appendChild(group);
+            });
+
+            return;
+          }
+
+          if (Array.isArray(item.content) && item.content.length > 0) {
+            const section = startSection(parent, item.title);
+            const list = makeElement("div", "project-tech-list");
+
+            item.content.forEach((technology) => {
+              list.appendChild(makeElement("span", "project-tech", technology));
+            });
+
+            section.appendChild(list);
+          }
+        }
+      };
+
+      function addDynamicSections(parent, sections) {
+        if (!Array.isArray(sections)) return;
+
+        sections.forEach((item) => {
+          if (!item || typeof item !== "object" || !item.title) return;
+
+          const renderer = sectionRenderers[item.type] || sectionRenderers.text;
+          renderer(parent, item);
+        });
+      }
+
 
       function addFeatures(parent, features) {
         if (!Array.isArray(features) || features.length === 0) {
@@ -703,20 +1021,108 @@ html[data-theme="light"] .project-state {
         parent.appendChild(section);
       }
 
-      function addExternalLink(parent, label, url) {
-        if (
-          typeof url !== "string" ||
-          !/^https?:\/\//i.test(url)
-        ) {
-          return;
-        }
+      
+function addGithubLink(hero, url) {
+  if (typeof url !== "string" || !/^https?:\/\//i.test(url)) return;
 
-        const link = makeElement("a", "project-action", label);
-        link.href = url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        parent.appendChild(link);
-      }
+  const link = makeElement("a", "project-github-link", "GitHub ↗");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  hero.appendChild(link);
+}
+
+function openMediaViewer(item) {
+  const overlay = document.querySelector("#project-lightbox");
+  const content = overlay.querySelector(".project-lightbox-content");
+  content.replaceChildren();
+
+  const media = makeElement(item.type === "video" ? "video" : "img");
+
+  if (item.type === "video") {
+    media.controls = true;
+    media.autoplay = true;
+  } else {
+    media.alt = item.description || "Project demonstration";
+  }
+
+  media.src = item.src;
+  content.appendChild(media);
+  overlay.hidden = false;
+}
+
+function addDemonstration(parent, mediaItems) {
+  if (!Array.isArray(mediaItems)) return;
+
+  const items = mediaItems.filter(item =>
+    item &&
+    ["image", "video"].includes(item.type) &&
+    typeof item.src === "string" &&
+    item.src.trim()
+  );
+
+  if (!items.length) return;
+
+  const section = makeElement("section", "project-section");
+  section.appendChild(makeElement("h2", "", "Demonstration"));
+
+  const list = makeElement("div", "project-media-list");
+
+  items.forEach(item => {
+    const row = makeElement("div", "project-media-row");
+    const thumb = makeElement("img", "project-media-thumb");
+
+    thumb.src = item.src;
+    thumb.alt = item.description || "Project demonstration";
+    thumb.loading = "lazy";
+    thumb.addEventListener("click", () => openMediaViewer(item));
+
+    row.appendChild(thumb);
+    row.appendChild(
+      makeElement("div", "project-media-description",
+        item.description || "Project demonstration")
+    );
+    list.appendChild(row);
+  });
+
+  section.appendChild(list);
+  parent.appendChild(section);
+}
+
+function addDocuments(parent, documents) {
+  if (!Array.isArray(documents)) return;
+
+  const items = documents.filter(item =>
+    item &&
+    typeof item.url === "string" &&
+    item.url.trim()
+  );
+
+  if (!items.length) return;
+
+  const section = makeElement("section", "project-section");
+  section.appendChild(
+    makeElement("h2", "", "Documents & Publications")
+  );
+
+  const list = makeElement("div", "project-document-list");
+
+  items.forEach(item => {
+    const link = makeElement(
+      "a",
+      "project-document-link",
+      `${item.title || "Document"} ↗`
+    );
+    link.href = item.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    list.appendChild(link);
+  });
+
+  section.appendChild(list);
+  parent.appendChild(section);
+}
+
 
       function renderProject(project) {
         const details = project.details || {};
@@ -764,21 +1170,23 @@ html[data-theme="light"] .project-state {
         backLink.href = "index.html#projects";
         actions.appendChild(backLink);
 
-        addExternalLink(actions, "GitHub ↗", links.github);
-        addExternalLink(actions, "Live Demo ↗", links.demo);
-        addExternalLink(actions, "Project Report ↗", links.report);
-
         hero.appendChild(actions);
+addGithubLink(hero, links.github);
+
         container.appendChild(hero);
 
-        addSection(container, "The Problem", details.problem);
-        addSection(container, "The Solution", details.solution);
-        addFeatures(container, details.features);
-        addSection(container, "Methodology", details.methodology);
-        addTechnologies(
-          container,
-          details.technologies || card.technologies
-        );
+                        if (Array.isArray(details.sections)) {
+          addDynamicSections(container, details.sections);
+        } else {
+          addSection(container, "The Problem", details.problem);
+          addSection(container, "The Solution", details.solution);
+          addFeatures(container, details.features);
+          addSection(container, "Methodology", details.methodology);
+          addTechnologies(container, details.technologies || card.technologies);
+        }
+
+        addDemonstration(container, details.media);
+        addDocuments(container, details.documents);
       }
 
       async function init() {
@@ -819,8 +1227,28 @@ html[data-theme="light"] .project-state {
         }
       }
 
+      const lightbox = document.querySelector("#project-lightbox");
+
+function closeMediaViewer() {
+  const video = lightbox.querySelector("video");
+  if (video) video.pause();
+
+  lightbox.hidden = true;
+  lightbox.querySelector(".project-lightbox-content").replaceChildren();
+}
+
+lightbox.querySelector(".project-lightbox-close").addEventListener(
+  "click",
+  closeMediaViewer
+);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeMediaViewer();
+});
+
       init();
     })();
   </script>
 </body>
 </html>
+
