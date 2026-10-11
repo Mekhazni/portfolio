@@ -1,4 +1,3 @@
-
 {
   "experiences": [
     {
@@ -9,23 +8,73 @@
       "startDate": "February 2026",
       "endDate": "June 2026",
       "location": "Algiers, Algeria",
-      "description": "Worked on the design, implementation, and evaluation of a RAG-based question-answering system for technical PDF documents.",
+      "description": "Designed and implemented a RAG-based question-answering system to improve access to technical telecommunications documentation.",
       "responsibilities": [
-        "Developed a retrieval pipeline combining query routing, hybrid retrieval, and contextual reranking.",
-        "Implemented backend and retrieval components using Python, FastAPI, and PostgreSQL with pgvector.",
-        "Built a web application prototype with authentication, document management, chat history, and citation-based document navigation."
+        "Developed a retrieval pipeline combining query routing, query rewriting, semantic search, BM25, Weighted Reciprocal Rank Fusion, and contextual reranking.",
+        "Implemented backend and retrieval components using Python, FastAPI, PostgreSQL with pgvector, Supabase, LangChain, and Ollama.",
+        "Integrated an LLM-based verification step to assess whether the retrieved context was sufficient to answer a query.",
+        "Built a web application prototype with authentication, document uploads, chat history, and citation-based navigation to relevant source pages."
       ]
     },
     {
-      "id": "mobilis-internship",
-      "organization": "Mobilis",
-      "role": "Intern",
+      "id": "algerie-telecom-access-network",
+      "organization": "Algérie Télécom",
+      "role": "Discovery and Analysis of the Fixed Access Network at Algérie Télécom",
       "type": "Internship",
-      "startDate": "jfje",
-      "endDate": "fef",
-      "location": "Algeria",
-      "description": "",
-      "responsibilities": []
+      "startDate": "January 2026",
+      "endDate": "February 2026",
+      "location": "Ben Aknoun, Algiers, Algeria",
+      "description": "Explored the architecture and operation of Algérie Télécom's fixed access network, examining the transition from DSL/MSAN infrastructure to FTTH/GPON.",
+      "responsibilities": [
+        "Studied the roles of OLT equipment, optical distribution infrastructure, and optical transport technologies.",
+        "Gained exposure to network quality indicators, maintenance practices, and technical support operations.",
+        "Connected telecommunications concepts studied academically with the operation of a large-scale access network."
+      ]
+    },
+    {
+      "id": "algerie-telecom-lakhdaria",
+      "organization": "Algérie Télécom",
+      "role": "Exploration of Telecommunications Systems and Network Technologies",
+      "type": "Internship",
+      "startDate": "January 2025",
+      "endDate": "January 2025",
+      "location": "Lakhdaria, Bouira, Algeria",
+      "description": "Explored telecommunications systems and access network technologies at the Lakhdaria CMP, with a focus on MSAN infrastructure and the transition toward fiber access.",
+      "responsibilities": [
+        "Learned about MSAN equipment and the transition to FTTH/GPON access technologies.",
+        "Examined how access network equipment supports voice and internet services.",
+        "Observed the practical application of telecommunications concepts in a field environment."
+      ]
+    },
+    {
+      "id": "mobilis-telecom-infrastructure-2023",
+      "organization": "ATM Mobilis",
+      "role": "Exploration of ICT Infrastructure in Digital Organizations",
+      "type": "Internship",
+      "startDate": "June 2023",
+      "endDate": "June 2023",
+      "location": "Bouira, Algeria",
+      "description": "Explored ICT infrastructure and technical operations in a mobile telecommunications environment.",
+      "responsibilities": [
+        "Observed the roles of BTS and BSC equipment, transmission systems, and supporting power infrastructure.",
+        "Learned about preventive and corrective maintenance, network supervision, and alarm management.",
+        "Developed a broader understanding of mobile network infrastructure and GSM architecture."
+      ]
+    },
+    {
+      "id": "mobilis-company-discovery-2022",
+      "organization": "ATM Mobilis",
+      "role": "Company Orientation and Discovery Internship",
+      "type": "Internship",
+      "startDate": "June 2022",
+      "endDate": "June 2022",
+      "location": "Bouira, Algeria",
+      "description": "Gained an initial understanding of Mobilis as a mobile telecommunications operator and its technical environment.",
+      "responsibilities": [
+        "Discovered the company's organization and the activities of the Bouira operational unit (UOP Bouira).",
+        "Received an introduction to mobile network infrastructure and the equipment supporting telecommunications services.",
+        "Built an initial understanding of how a mobile operator's technical operations support service delivery."
+      ]
     }
   ]
 }
