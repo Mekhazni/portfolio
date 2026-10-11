@@ -140,25 +140,34 @@ function setLink(element, field, contact) {
    3. PROFILE, ABOUT AND CONTACT
    ======================================== */
 
+
 function renderProfile(profile) {
+  // Render the existing top-level profile fields.
   document.querySelectorAll("[data-profile]").forEach((element) => {
     const field = element.dataset.profile;
-
-    let value = profile[field];
-
-    if (field === "intro" && !value) {
-      value = profile.about?.[0] || "";
-    }
+    const value = profile[field];
 
     if (value !== undefined && value !== null) {
       element.textContent = value;
     }
   });
 
+  // Render the Hero fields from profile.hero.
+  document.querySelectorAll("[data-hero]").forEach((element) => {
+    const field = element.dataset.hero;
+    const value = profile.hero?.[field];
+
+    if (value !== undefined && value !== null) {
+      element.textContent = value;
+    }
+  });
+
+  // Keep the existing contact links working.
   document.querySelectorAll("[data-link]").forEach((element) => {
     setLink(element, element.dataset.link, profile.contact);
   });
 
+  // Render the About paragraphs.
   const aboutContainer = document.querySelector("#about-content");
 
   if (aboutContainer && Array.isArray(profile.about)) {
@@ -169,8 +178,116 @@ function renderProfile(profile) {
     });
   }
 
+  // Render the four About interest blocks.
+  renderInterests(profile.interests);
+
+  // Keep the existing About modal working.
   renderAboutDetails(profile.aboutDetails);
 }
+
+
+
+function renderInterests(interests) {
+  if (!Array.isArray(interests)) return;
+
+  const iconNames = {
+    "brain-circuit": "brain-circuit",
+    "code-2": "code-2",
+    lightbulb: "lightbulb",
+    "graduation-cap": "graduation-cap"
+  };
+
+  interests.slice(0, 4).forEach((interest, index) => {
+    if (!interest) return;
+
+    const icon = document.querySelector(
+      `[data-interest-icon="${index}"]`
+    );
+
+    const title = document.querySelector(
+      `[data-interest-title="${index}"]`
+    );
+
+    const description = document.querySelector(
+      `[data-interest-description="${index}"]`
+    );
+
+    if (icon && interest.icon) {
+      const iconName = iconNames[interest.icon] || "sparkles";
+
+      icon.replaceChildren();
+
+      const svg = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg"
+      );
+
+      svg.setAttribute("width", "36");
+      svg.setAttribute("height", "36");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "1.8");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.setAttribute("aria-hidden", "true");
+
+      const paths = {
+        "brain-circuit": [
+          ["path", { d: "M12 18V5" }],
+          ["path", { d: "M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" }],
+          ["path", { d: "M17.6 6.5a3 3 0 0 0-5.6-1.5" }],
+          ["path", { d: "M9 18a3 3 0 0 1-3-3 3 3 0 0 1 1-5.8" }],
+          ["path", { d: "M15 18a3 3 0 0 0 3-3 3 3 0 0 0-1-5.8" }],
+          ["path", { d: "M6 15H4" }],
+          ["path", { d: "M20 15h-2" }],
+          ["path", { d: "M9 5a3 3 0 0 0-5.6 1.5" }]
+        ],
+        "code-2": [
+          ["path", { d: "m16 18 6-6-6-6" }],
+          ["path", { d: "m8 6-6 6 6 6" }]
+        ],
+        lightbulb: [
+          ["path", { d: "M9 18h6" }],
+          ["path", { d: "M10 22h4" }],
+          ["path", { d: "M15.09 14a6 6 0 1 0-6.18 0c.52.4.89 1.02 1.09 2h4c.2-.98.57-1.6 1.09-2" }]
+        ],
+        "graduation-cap": [
+          ["path", { d: "m22 10-10-5L2 10l10 5 10-5Z" }],
+          ["path", { d: "M6 12v5c3.33 3 8.67 3 12 0v-5" }],
+          ["path", { d: "M22 10v6" }]
+        ],
+        sparkles: [
+          ["path", { d: "m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3Z" }]
+        ]
+      };
+
+      (paths[iconName] || paths.sparkles).forEach(([tag, attrs]) => {
+        const element = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          tag
+        );
+
+        Object.entries(attrs).forEach(([key, value]) => {
+          element.setAttribute(key, value);
+        });
+
+        svg.appendChild(element);
+      });
+
+      icon.appendChild(svg);
+    }
+
+    if (title && interest.title) {
+      title.textContent = interest.title;
+    }
+
+    if (description && interest.description) {
+      description.textContent = interest.description;
+    }
+  });
+}
+
 
 
 /* ========================================
@@ -442,12 +559,25 @@ function renderExperience(experienceData) {
     // Second grid column: all experience details
     const content = createElement("div");
 
+        const organizationRow = createElement("div", "experience-org-row");
+
     addText(
-      content,
+      organizationRow,
       "b",
       "",
       experience.organization || ""
     );
+
+    if (experience.type) {
+      addText(
+        organizationRow,
+        "span",
+        "experience-type",
+        experience.type
+      );
+    }
+
+    content.appendChild(organizationRow);
 
     const roleDetails = [
       experience.role,
